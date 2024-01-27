@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5ed62;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("logo.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: bold  ;
+    }
+
+    #converter {
+      text-align: center;
+      background-color: rgba(247, 237, 237, 0.3);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-size: large;
+    }
+
+    input {
+      width: 50%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      color: rgb(0, 16, 16);
+    }
+
+    button {
+      background-color: #020a02;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form>
+    <div id="converter">
+      <marquee><h2>TEMPERATURE CONVERTER</h2></marquee>
+      <b><label for="temperature">DEGREES:</label></b>
+      <input type="number" id="temperature" placeholder="Temperature" required>
+      <br>
+      <b><label for="unit">SELECT UNIT:</label></b>
+      <select id="unit">
+        <option value="celsius">CELSIUS</option>
+        <option value="fahrenheit">FAHRENHEIT</option>
+      </select>
+      <br>
+      <button type="button" onclick="convertTemperature()">CONVERT</button>
+      <button type="reset">RESET</button>
+      <br><br>
+      <b>RESULT:</b>
+      <div id="result"></div>
+      
+    </div>
+  </form>
+
+  <script>
+    function convertTemperature() {
+      var temperatureInput = document.getElementById('temperature').value;
+      var unit = document.getElementById('unit').value;
+
+      if (!temperatureInput || isNaN(temperatureInput)) {
+        document.getElementById('result').innerText = '\nPLEASE ENTER VALID TEMPERATURE.';
+        return false; 
+      }
+
+      if (unit === 'celsius') {
+        var convertedTemperature = (temperatureInput * 9/5) + 32;
+        document.getElementById('result').innerText = '\n' + convertedTemperature + '° FAHRENHEIT';
+      } else {
+        var convertedTemperature = (temperatureInput - 32) * 5/9;
+        document.getElementById('result').innerText = '\n' + convertedTemperature + '° CELSIUS';
+      }
+
+      return false; 
+    }
+  </script>
+
+</body>
+</html>
+
