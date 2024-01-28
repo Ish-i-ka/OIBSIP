@@ -69,8 +69,8 @@ nav {
 }
 
 .caption-header {
-  background-color: var(--bg-phoutu);
-  background-image: url(../images/bg_image.avif);
+  background-color: #252525;
+  background-image: url(../images/bg_image_1.jpg);
   background-size: cover;
   background-blend-mode: multiply;
   background-attachment: fixed;
@@ -149,9 +149,9 @@ b {
   padding-top: 5rem;
   color: var(--bg-about);
 }
-.text p{
+.text-muted{
   text-align: justify;
-  color: var(--bg-about2);
+  color: var(--bg-primary);
 }
 ul {
   list-style: none;
@@ -193,7 +193,15 @@ ul {
 .services {
   padding-top: 5rem;
 }
-
+.title{
+  color: var(--bg-about);
+}
+.favicon h4{
+  color: var(--bg-about);
+}
+.favicon p{
+  color: var(--bg-primary);
+}
 /**Projects**/
 .projects {
   padding-top: 5rem;
@@ -246,8 +254,12 @@ ul {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
-
+.col p{
+  color: var(--bg-primary);
+}
+.footer p{
+  color: var(--bg-primary);
+}
 /* DARK MODE */
 :root .dark-mode{
   --bg-main: #464343;
